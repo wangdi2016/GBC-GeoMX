@@ -1,2 +1,3 @@
 # GBC-GeoMX
-GBC GeoMX
+
+scripts used to analyze GBC GeoMX data.
