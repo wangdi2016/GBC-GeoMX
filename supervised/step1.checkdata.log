@@ -1,0 +1,347 @@
+[1] "/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library"
+Loading required package: easyalluvial
+Loading required package: plyr
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: tibble
+Loading required package: gridExtra
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+Loading required package: FactoMineR
+Loading required package: EnvStats
+
+Attaching package: ‘EnvStats’
+
+The following objects are masked from ‘package:stats’:
+
+    predict, predict.lm
+
+The following object is masked from ‘package:base’:
+
+    print.default
+
+Loading required package: ggrepel
+Loading required package: ggplot2
+Loading required package: parcats
+Loading required package: pheatmap
+Loading required package: plotly
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, mutate, rename, summarise
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+
+Loading required package: scales
+Loading required package: lme4
+Loading required package: Matrix
+Loading required package: ggthemes
+Loading required package: GLMMadaptive
+
+Attaching package: ‘GLMMadaptive’
+
+The following object is masked from ‘package:lme4’:
+
+    negative.binomial
+
+The following object is masked from ‘package:EnvStats’:
+
+    predict
+
+Loading required package: MCMCglmm
+Loading required package: coda
+Loading required package: ape
+
+Attaching package: ‘ape’
+
+The following object is masked from ‘package:dplyr’:
+
+    where
+
+Loading required package: GGally
+Loading required package: ggallin
+Loading required package: stringi
+Loading required package: parallel
+Loading required package: openxlsx
+Loading required package: lubridate
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+Loading required package: ggforce
+Loading required package: tidyr
+
+Attaching package: ‘tidyr’
+
+The following objects are masked from ‘package:Matrix’:
+
+    expand, pack, unpack
+
+Loading required package: RColorBrewer
+Loading required package: viridis
+Loading required package: viridisLite
+
+Attaching package: ‘viridis’
+
+The following object is masked from ‘package:scales’:
+
+    viridis_pal
+
+Loading required package: DT
+Loading required package: ComplexHeatmap
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.22.0
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+! pheatmap() has been masked by ComplexHeatmap::pheatmap(). Most of the arguments
+   in the original pheatmap() are identically supported in the new function. You 
+   can still use the original function by explicitly calling pheatmap::pheatmap().
+
+
+Attaching package: ‘ComplexHeatmap’
+
+The following object is masked from ‘package:plotly’:
+
+    add_heatmap
+
+The following object is masked from ‘package:pheatmap’:
+
+    pheatmap
+
+Loading required package: GeomxTools
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:lubridate’:
+
+    intersect, setdiff, union
+
+The following object is masked from ‘package:MCMCglmm’:
+
+    path
+
+The following object is masked from ‘package:gridExtra’:
+
+    combine
+
+The following objects are masked from ‘package:dplyr’:
+
+    combine, intersect, setdiff, union
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: NanoStringNCTools
+Loading required package: S4Vectors
+Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:tidyr’:
+
+    expand
+
+The following objects are masked from ‘package:lubridate’:
+
+    second, second<-
+
+The following objects are masked from ‘package:Matrix’:
+
+    expand, unname
+
+The following object is masked from ‘package:plotly’:
+
+    rename
+
+The following objects are masked from ‘package:dplyr’:
+
+    first, rename
+
+The following object is masked from ‘package:plyr’:
+
+    rename
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+
+Attaching package: ‘NanoStringNCTools’
+
+The following object is masked from ‘package:plotly’:
+
+    groups
+
+The following object is masked from ‘package:dplyr’:
+
+    groups
+
+Loading required package: circlize
+========================================
+circlize version 0.4.16
+CRAN page: https://cran.r-project.org/package=circlize
+Github page: https://github.com/jokergoo/circlize
+Documentation: https://jokergoo.github.io/circlize_book/book/
+
+If you use it in published research, please cite:
+Gu, Z. circlize implements and enhances circular visualization
+  in R. Bioinformatics 2014.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(circlize))
+========================================
+
+
+Attaching package: ‘circlize’
+
+The following object is masked from ‘package:ape’:
+
+    degree
+
+[1] 1022   60
+R version 4.4.2 (2024-10-31)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sequoia 15.6.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/New_York
+tzcode source: internal
+
+attached base packages:
+ [1] stats4    grid      parallel  stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] circlize_0.4.16          GeomxTools_3.10.0        NanoStringNCTools_1.14.0
+ [4] S4Vectors_0.44.0         Biobase_2.66.0           BiocGenerics_0.52.0     
+ [7] ComplexHeatmap_2.22.0    DT_0.33                  viridis_0.6.5           
+[10] viridisLite_0.4.2        RColorBrewer_1.1-3       tidyr_1.3.1             
+[13] ggforce_0.5.0            lubridate_1.9.4          openxlsx_4.2.8          
+[16] stringi_1.8.7            ggallin_0.1.1            GGally_2.3.0            
+[19] MCMCglmm_2.36            ape_5.8-1                coda_0.19-4.1           
+[22] GLMMadaptive_0.9-7       ggthemes_5.1.0           lme4_1.1-37             
+[25] Matrix_1.7-3             scales_1.4.0             plotly_4.11.0           
+[28] pheatmap_1.0.13          parcats_0.0.5            ggrepel_0.9.6           
+[31] ggplot2_3.5.2            EnvStats_3.1.0           FactoMineR_2.12         
+[34] gridExtra_2.3            tibble_3.3.0             dplyr_1.1.4             
+[37] plyr_1.8.9               easyalluvial_0.3.2      
+
+loaded via a namespace (and not attached):
+  [1] cubature_2.1.4          splines_4.4.2           cellranger_1.1.0       
+  [4] polyclip_1.10-7         hardhat_1.4.1           rpart_4.1.24           
+  [7] lifecycle_1.0.4         Rdpack_2.6.4            doParallel_1.0.17      
+ [10] globals_0.18.0          lattice_0.22-7          MASS_7.3-65            
+ [13] flashClust_1.01-2       magrittr_2.0.3          spam_2.11-1            
+ [16] zip_2.3.3               sp_2.2-0                minqa_1.2.8            
+ [19] zlibbioc_1.52.0         purrr_1.1.0             nnet_7.3-20            
+ [22] tensorA_0.36.2.1        tweenr_2.0.3            ipred_0.9-15           
+ [25] lava_1.8.1              GenomeInfoDbData_1.2.13 IRanges_2.40.1         
+ [28] listenv_0.9.1           parallelly_1.45.1       svglite_2.2.1          
+ [31] codetools_0.2-20        tidyselect_1.2.1        shape_1.4.6.1          
+ [34] UCSC.utils_1.2.0        farver_2.1.2            matrixStats_1.5.0      
+ [37] jsonlite_2.0.0          GetoptLong_1.0.5        progressr_0.15.1       
+ [40] ggridges_0.5.6          ggalluvial_0.12.5       survival_3.8-3         
+ [43] iterators_1.0.14        emmeans_1.11.2          systemfonts_1.2.3      
+ [46] foreach_1.5.2           tools_4.4.2             ragg_1.4.0             
+ [49] Rcpp_1.1.0              glue_1.8.0              prodlim_2025.04.28     
+ [52] xfun_0.52               GenomeInfoDb_1.42.3     withr_3.0.2            
+ [55] numDeriv_2016.8-1.1     fastmap_1.2.0           boot_1.3-31            
+ [58] digest_0.6.37           timechange_0.3.0        R6_2.6.1               
+ [61] estimability_1.5.1      textshaping_1.0.1       colorspace_2.1-1       
+ [64] dichromat_2.0-0.1       generics_0.1.4          data.table_1.17.8      
+ [67] recipes_1.3.1           corpcor_1.6.10          class_7.3-23           
+ [70] httr_1.4.7              htmlwidgets_1.6.4       scatterplot3d_0.3-44   
+ [73] ggstats_0.10.0          pkgconfig_2.0.3         gtable_0.3.6           
+ [76] timeDate_4041.110       S7_0.2.0                XVector_0.46.0         
+ [79] htmltools_0.5.8.1       dotCall64_1.2           multcompView_0.1-10    
+ [82] clue_0.3-66             SeuratObject_5.1.0      leaps_3.2              
+ [85] png_0.1-8               gower_1.0.2             reformulas_0.4.1       
+ [88] knitr_1.50              reshape2_1.4.4          rjson_0.2.23           
+ [91] uuid_1.2-1              nlme_3.1-168            nloptr_2.2.1           
+ [94] GlobalOptions_0.1.2     stringr_1.5.1           vipor_0.4.7            
+ [97] pillar_1.11.0           vctrs_0.6.5             xtable_1.8-4           
+[100] cluster_2.1.8.1         beeswarm_0.4.0          evaluate_1.0.4         
+[103] mvtnorm_1.3-3           cli_3.6.5               compiler_4.4.2         
+[106] rlang_1.1.6             crayon_1.5.3            future.apply_1.20.0    
+[109] labeling_0.4.3          forcats_1.0.0           ggbeeswarm_0.7.2       
+[112] ggiraph_0.8.13          lmerTest_3.1-3          Biostrings_2.74.1      
+[115] lazyeval_0.2.2          future_1.67.0           rbibutils_2.3          
+[118] readxl_1.4.5           

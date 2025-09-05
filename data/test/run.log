@@ -1,0 +1,4 @@
+(bacgen3) [wangdi@NCI-02277577-ML ~/work/DWX/geomx/jill/2025-08-15/GBC/Data/test]./run.sh Initial_Dataset_wholeslide_all_samples.xlsx Initial_Dataset_wholeslide_all_samples.dw.xlsx
+/Users/wangdi/apps/anaconda3/envs/bacgen3/lib/python3.9/site-packages/openpyxl/styles/stylesheet.py:226: UserWarning: Workbook contains no default style, apply openpyxl's default
+  warn("Workbook contains no default style, apply openpyxl's default")
+Processed file saved to Initial_Dataset_wholeslide_all_samples.dw.xlsx with cleaned data in Sheet1 and original in 'Exported dataset'

@@ -1,0 +1,619 @@
+[1] "/Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/library"
+Loading required package: easyalluvial
+Loading required package: plyr
+Loading required package: dplyr
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+Loading required package: tibble
+Loading required package: gridExtra
+
+Attaching package: ‘gridExtra’
+
+The following object is masked from ‘package:dplyr’:
+
+    combine
+
+Loading required package: FactoMineR
+Loading required package: EnvStats
+
+Attaching package: ‘EnvStats’
+
+The following objects are masked from ‘package:stats’:
+
+    predict, predict.lm
+
+The following object is masked from ‘package:base’:
+
+    print.default
+
+Loading required package: ggrepel
+Loading required package: ggplot2
+Loading required package: parcats
+Loading required package: pheatmap
+Loading required package: plotly
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following objects are masked from ‘package:plyr’:
+
+    arrange, mutate, rename, summarise
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+
+Loading required package: scales
+Loading required package: lme4
+Loading required package: Matrix
+Loading required package: ggthemes
+Loading required package: GLMMadaptive
+
+Attaching package: ‘GLMMadaptive’
+
+The following object is masked from ‘package:lme4’:
+
+    negative.binomial
+
+The following object is masked from ‘package:EnvStats’:
+
+    predict
+
+Loading required package: MCMCglmm
+Loading required package: coda
+Loading required package: ape
+
+Attaching package: ‘ape’
+
+The following object is masked from ‘package:dplyr’:
+
+    where
+
+Loading required package: GGally
+Loading required package: ggallin
+Loading required package: stringi
+Loading required package: parallel
+Loading required package: openxlsx
+Loading required package: lubridate
+
+Attaching package: ‘lubridate’
+
+The following objects are masked from ‘package:base’:
+
+    date, intersect, setdiff, union
+
+Loading required package: ggforce
+Loading required package: tidyr
+
+Attaching package: ‘tidyr’
+
+The following objects are masked from ‘package:Matrix’:
+
+    expand, pack, unpack
+
+Loading required package: RColorBrewer
+Loading required package: viridis
+Loading required package: viridisLite
+
+Attaching package: ‘viridis’
+
+The following object is masked from ‘package:scales’:
+
+    viridis_pal
+
+Loading required package: DT
+Loading required package: ComplexHeatmap
+Loading required package: grid
+========================================
+ComplexHeatmap version 2.22.0
+Bioconductor page: http://bioconductor.org/packages/ComplexHeatmap/
+Github page: https://github.com/jokergoo/ComplexHeatmap
+Documentation: http://jokergoo.github.io/ComplexHeatmap-reference
+
+If you use it in published research, please cite either one:
+- Gu, Z. Complex Heatmap Visualization. iMeta 2022.
+- Gu, Z. Complex heatmaps reveal patterns and correlations in multidimensional 
+    genomic data. Bioinformatics 2016.
+
+
+The new InteractiveComplexHeatmap package can directly export static 
+complex heatmaps into an interactive Shiny app with zero effort. Have a try!
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(ComplexHeatmap))
+========================================
+! pheatmap() has been masked by ComplexHeatmap::pheatmap(). Most of the arguments
+   in the original pheatmap() are identically supported in the new function. You 
+   can still use the original function by explicitly calling pheatmap::pheatmap().
+
+
+Attaching package: ‘ComplexHeatmap’
+
+The following object is masked from ‘package:plotly’:
+
+    add_heatmap
+
+The following object is masked from ‘package:pheatmap’:
+
+    pheatmap
+
+Loading required package: GeomxTools
+Loading required package: Biobase
+Loading required package: BiocGenerics
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:lubridate’:
+
+    intersect, setdiff, union
+
+The following object is masked from ‘package:MCMCglmm’:
+
+    path
+
+The following object is masked from ‘package:gridExtra’:
+
+    combine
+
+The following objects are masked from ‘package:dplyr’:
+
+    combine, intersect, setdiff, union
+
+The following objects are masked from ‘package:stats’:
+
+    IQR, mad, sd, var, xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, aperm, append, as.data.frame, basename, cbind,
+    colnames, dirname, do.call, duplicated, eval, evalq, Filter, Find,
+    get, grep, grepl, intersect, is.unsorted, lapply, Map, mapply,
+    match, mget, order, paste, pmax, pmax.int, pmin, pmin.int,
+    Position, rank, rbind, Reduce, rownames, sapply, saveRDS, setdiff,
+    table, tapply, union, unique, unsplit, which.max, which.min
+
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+Loading required package: NanoStringNCTools
+Loading required package: S4Vectors
+Loading required package: stats4
+
+Attaching package: ‘S4Vectors’
+
+The following object is masked from ‘package:tidyr’:
+
+    expand
+
+The following objects are masked from ‘package:lubridate’:
+
+    second, second<-
+
+The following objects are masked from ‘package:Matrix’:
+
+    expand, unname
+
+The following object is masked from ‘package:plotly’:
+
+    rename
+
+The following objects are masked from ‘package:dplyr’:
+
+    first, rename
+
+The following object is masked from ‘package:plyr’:
+
+    rename
+
+The following object is masked from ‘package:utils’:
+
+    findMatches
+
+The following objects are masked from ‘package:base’:
+
+    expand.grid, I, unname
+
+
+Attaching package: ‘NanoStringNCTools’
+
+The following object is masked from ‘package:plotly’:
+
+    groups
+
+The following object is masked from ‘package:dplyr’:
+
+    groups
+
+Loading required package: circlize
+========================================
+circlize version 0.4.16
+CRAN page: https://cran.r-project.org/package=circlize
+Github page: https://github.com/jokergoo/circlize
+Documentation: https://jokergoo.github.io/circlize_book/book/
+
+If you use it in published research, please cite:
+Gu, Z. circlize implements and enhances circular visualization
+  in R. Bioinformatics 2014.
+
+This message can be suppressed by:
+  suppressPackageStartupMessages(library(circlize))
+========================================
+
+
+Attaching package: ‘circlize’
+
+The following object is masked from ‘package:ape’:
+
+    degree
+
+Warning messages:
+1: In dir.create(outdir, recursive = TRUE) :
+  'output_GBC_20250905' already exists
+2: In dir.create(fig_dir, recursive = TRUE) :
+  'output_GBC_20250905/figures' already exists
+3: In dir.create(de_dir, recursive = TRUE) :
+  'output_GBC_20250905/de_dir' already exists
+4: In dir.create(object_dir, recursive = TRUE) :
+  'output_GBC_20250905/R_objects' already exists
+5: In dir.create(outdata_dir, recursive = TRUE) :
+  'output_GBC_20250905/data' already exists
+== dim of raw ==
+[1] 1022   60
+== dim of kept ==
+[1] 1020   60
+ [1] "CD20"                 "Ms IgG1"              "CD8"                 
+ [4] "HLA-DR"               "GAPDH"                "SMA"                 
+ [7] "CTLA4"                "CD11c"                "CD68"                
+[10] "Fibronectin"          "Ms IgG2a"             "PD-1"                
+[13] "GZMB"                 "CD3"                  "S6"                  
+[16] "Rb IgG"               "CD45"                 "PanCk"               
+[19] "Beta-2-microglobulin" "HYB-POS"              "Ki-67"               
+[22] "PD-L1"                "CD56"                 "CD4"                 
+[25] "Histone H3"           "HYB-NEG"              "OX40L"               
+[28] "LAG3"                 "GITR"                 "Tim-3"               
+[31] "IDO1"                 "ARG1"                 "STING"               
+[34] "VISTA"                "B7-H3"                "4-1BB"               
+[37] "CD34"                 "FAP-alpha"            "CD14"                
+[40] "CD163"                "FOXP3"                "CD45RO"              
+[43] "CD66b"                "MART1"                "S100B"               
+[46] "PTEN"                 "Bcl-2"                "ER-alpha"            
+[49] "PR"                   "EpCAM"                "NY-ESO-1"            
+[52] "Her2"                 "CD44"                 "CD27"                
+[55] "PD-L2"                "ICOS"                 "CD127"               
+[58] "CD25"                 "CD80"                 "CD40"                
+== dim of removed ==
+[1]  2 60
+                                                       CD20  Ms IgG1       CD8
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  11.37529 11.15306 20.871591
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  1.00000  1.00000  2.319066
+                                                     HLA-DR      GAPDH      SMA
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  35.70013 647.026376 1294.937
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  1.00000   2.090554    1.000
+                                                      CTLA4      CD11c     CD68
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1.028020 20.6931636 18.24736
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 2.056041  0.9853887  1.00000
+                                                   Fibronectin  Ms IgG2a
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  290.0391764 10.033149
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative   0.9509481  5.472627
+                                                       PD-1      GZMB      CD3
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  10.49402 27.587184 7.914113
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  1.00000  1.149466 1.000000
+                                                         S6   Rb IgG     CD45
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  711.2956 2.185115 27.11257
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative   1.0000 1.000000  1.00000
+                                                      PanCk
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1073.914
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative    1.000
+                                                   Beta-2-microglobulin
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive              17.51717
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative              1.00000
+                                                    HYB-POS     Ki-67    PD-L1
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  185.9857 17.167176 3.811435
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative   1.0000  1.807071 1.000000
+                                                        CD56      CD4
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  29.991579 29.47298
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  2.607963  1.00000
+                                                   Histone H3 HYB-NEG    OX40L
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive     614.211       1 10.77987
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative      1.000       1  1.00000
+                                                       LAG3      GITR     Tim-3
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1.001015 0.9653528 10.633103
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000 1.0000000  1.181456
+                                                       IDO1     ARG1   STING
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1.847131 4.068044 19.5678
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000 1.000000  1.0000
+                                                      VISTA    B7-H3    4-1BB
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  2.122472 6.193977 2.046578
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000 1.032329 1.000000
+                                                       CD34 FAP-alpha     CD14
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  35.44203  4.591852 17.04667
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  1.00000  1.000000  1.00000
+                                                      CD163    FOXP3   CD45RO
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1.178499 3.680431 11.88517
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000 1.000000  1.00000
+                                                   CD66b    MART1    S100B
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive      1 2.146222 16.55056
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative     1 1.000000  1.00000
+                                                       PTEN     Bcl-2  ER-alpha
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  10.34728 4.7546569 0.9125171
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative  1.00000 0.9509314 0.9125171
+                                                         PR    EpCAM NY-ESO-1
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  1.098451 255.5433 1.971047
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000   1.0000 1.000000
+                                                        Her2     CD44      CD27
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  7.4364226 55.26377  9.117565
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 0.8262692  1.00000 12.156754
+                                                       PD-L2    ICOS    CD127
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  0.9327718 3.24921 5.419052
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.0000000 1.00000 1.000000
+                                                       CD25     CD80     CD40
+Slide-1116809_LG01056 4064 | CC-001 | CK Positive  8.703669 1.000000 2.752279
+Slide-1118126_LG00655 4051 | LGD-001 | CK Negative 1.000000 1.165071 7.339411
+CD20
+Ms IgG1
+CD8
+HLA-DR
+GAPDH
+SMA
+CTLA4
+CD11c
+CD68
+Fibronectin
+Ms IgG2a
+PD-1
+GZMB
+CD3
+S6
+Rb IgG
+CD45
+PanCk
+Beta-2-microglobulin
+HYB-POS
+Ki-67
+PD-L1
+CD56
+CD4
+Histone H3
+HYB-NEG
+OX40L
+LAG3
+GITR
+Tim-3
+IDO1
+ARG1
+STING
+VISTA
+B7-H3
+4-1BB
+CD34
+FAP-alpha
+CD14
+CD163
+FOXP3
+CD45RO
+CD66b
+MART1
+S100B
+PTEN
+Bcl-2
+ER-alpha
+PR
+EpCAM
+NY-ESO-1
+Her2
+CD44
+CD27
+PD-L2
+ICOS
+CD127
+CD25
+CD80
+CD40
+== Kept after ERCC Normalization ==
+[1] 1020   58
+CD20
+Ms IgG1
+CD8
+HLA-DR
+GAPDH
+SMA
+CTLA4
+CD11c
+CD68
+Fibronectin
+Ms IgG2a
+PD-1
+GZMB
+CD3
+S6
+Rb IgG
+CD45
+PanCk
+Beta-2-microglobulin
+Ki-67
+PD-L1
+CD56
+CD4
+Histone H3
+OX40L
+LAG3
+GITR
+Tim-3
+IDO1
+ARG1
+STING
+VISTA
+B7-H3
+4-1BB
+CD34
+FAP-alpha
+CD14
+CD163
+FOXP3
+CD45RO
+CD66b
+MART1
+S100B
+PTEN
+Bcl-2
+ER-alpha
+PR
+EpCAM
+NY-ESO-1
+Her2
+CD44
+CD27
+PD-L2
+ICOS
+CD127
+CD25
+CD80
+CD40
+== removed HYB-POS and HYB-NEG proteins from 60 protein list
+== End of ERCC Normalization ==
+Number of AOIs below the area of 1000 and nuclei threshold of 15: 14 (1.37%).
+ [1] "Slide-1116575_LG00787 4051 | IM-003 | CK Negative"
+ [2] "Slide-1116718_LG01755 4051 | IC-001 | CK Positive"
+ [3] "Slide-1116718_LG01755 4051 | IC-002 | CK Positive"
+ [4] "Slide-1117088_LG01553 4051 | CC-004 | CK Negatve" 
+ [5] "Slide-1117088_LG01553 4051 | CC-004 | CK Positive"
+ [6] "Slide-1117114_LG01553 4064 | IC-001 | CK Negative"
+ [7] "Slide-1117114_LG01553 4064 | IC-002 | CK Negative"
+ [8] "Slide-1117114_LG01553 4064 | IC-003 | CK Negative"
+ [9] "Slide-1117114_LG01553 4064 | IC-004 | CK Negative"
+[10] "Slide-1117114_LG01553 4064 | IC-005 | CK Negative"
+[11] "Slide-1117114_LG01553 4064 | IC-006 | CK Negative"
+[12] "Slide-1118113_LG00620 4051 | IC-003 | CK Positive"
+[13] "Slide-1118113_LG00620 4051 | IC-004 | CK Positive"
+[14] "Slide-1118113_LG00620 4051 | IC-005 | CK Positive"
+Removed 14 sample(s) with low nuclei counts or low area.
+All IgGs: Ms IgG1, Ms IgG2a, Rb IgG
+All HKGs: S6, Histone H3, GAPDH
+Loading required package: rlang
+
+Attaching package: ‘rlang’
+
+The following object is masked from ‘package:Biobase’:
+
+    exprs
+
+Warning messages:
+1: Vectorized input to `element_text()` is not officially supported.
+ℹ Results may be unexpected or may change in future versions of ggplot2. 
+2: The `size` argument of `element_rect()` is deprecated as of ggplot2 3.4.0.
+ℹ Please use the `linewidth` argument instead. 
+3: A numeric `legend.position` argument in `theme()` was deprecated in ggplot2
+3.5.0.
+ℹ Please use the `legend.position.inside` argument of `theme()` instead. 
+Warning message:
+Vectorized input to `element_text()` is not officially supported.
+ℹ Results may be unexpected or may change in future versions of ggplot2. 
+Warning message:
+Vectorized input to `element_text()` is not officially supported.
+ℹ Results may be unexpected or may change in future versions of ggplot2. 
+Warning message:
+Vectorized input to `element_text()` is not officially supported.
+ℹ Results may be unexpected or may change in future versions of ggplot2. 
+There are 1 (0.099%) of AOIs with a |log2 norm factor| of 5 or more.
+[1] "Slide-1116458_LG00196 4051 | LGD-005 | CK Negative"
+Removed 1 samples/AOIs.
+=== removed hks and igs to create the final dataset for downstream analysis. ===
+Removed 3 housekeeper proteins  features.
+Removed 3 IgGs  features.
+R version 4.4.2 (2024-10-31)
+Platform: aarch64-apple-darwin20
+Running under: macOS Sequoia 15.6.1
+
+Matrix products: default
+BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: America/New_York
+tzcode source: internal
+
+attached base packages:
+ [1] stats4    grid      parallel  stats     graphics  grDevices utils    
+ [8] datasets  methods   base     
+
+other attached packages:
+ [1] rlang_1.1.6              circlize_0.4.16          GeomxTools_3.10.0       
+ [4] NanoStringNCTools_1.14.0 S4Vectors_0.44.0         Biobase_2.66.0          
+ [7] BiocGenerics_0.52.0      ComplexHeatmap_2.22.0    DT_0.33                 
+[10] viridis_0.6.5            viridisLite_0.4.2        RColorBrewer_1.1-3      
+[13] tidyr_1.3.1              ggforce_0.5.0            lubridate_1.9.4         
+[16] openxlsx_4.2.8           stringi_1.8.7            ggallin_0.1.1           
+[19] GGally_2.3.0             MCMCglmm_2.36            ape_5.8-1               
+[22] coda_0.19-4.1            GLMMadaptive_0.9-7       ggthemes_5.1.0          
+[25] lme4_1.1-37              Matrix_1.7-3             scales_1.4.0            
+[28] plotly_4.11.0            pheatmap_1.0.13          parcats_0.0.5           
+[31] ggrepel_0.9.6            ggplot2_3.5.2            EnvStats_3.1.0          
+[34] FactoMineR_2.12          gridExtra_2.3            tibble_3.3.0            
+[37] dplyr_1.1.4              plyr_1.8.9               easyalluvial_0.3.2      
+
+loaded via a namespace (and not attached):
+  [1] cubature_2.1.4          splines_4.4.2           cellranger_1.1.0       
+  [4] polyclip_1.10-7         hardhat_1.4.1           rpart_4.1.24           
+  [7] lifecycle_1.0.4         Rdpack_2.6.4            doParallel_1.0.17      
+ [10] globals_0.18.0          lattice_0.22-7          MASS_7.3-65            
+ [13] flashClust_1.01-2       magrittr_2.0.3          spam_2.11-1            
+ [16] zip_2.3.3               sp_2.2-0                minqa_1.2.8            
+ [19] zlibbioc_1.52.0         purrr_1.1.0             nnet_7.3-20            
+ [22] tensorA_0.36.2.1        tweenr_2.0.3            ipred_0.9-15           
+ [25] lava_1.8.1              GenomeInfoDbData_1.2.13 IRanges_2.40.1         
+ [28] listenv_0.9.1           parallelly_1.45.1       codetools_0.2-20       
+ [31] tidyselect_1.2.1        shape_1.4.6.1           UCSC.utils_1.2.0       
+ [34] farver_2.1.2            matrixStats_1.5.0       jsonlite_2.0.0         
+ [37] GetoptLong_1.0.5        progressr_0.15.1        ggridges_0.5.6         
+ [40] ggalluvial_0.12.5       survival_3.8-3          iterators_1.0.14       
+ [43] emmeans_1.11.2          systemfonts_1.2.3       foreach_1.5.2          
+ [46] tools_4.4.2             ragg_1.4.0              Rcpp_1.1.0             
+ [49] glue_1.8.0              prodlim_2025.04.28      mgcv_1.9-3             
+ [52] xfun_0.52               GenomeInfoDb_1.42.3     withr_3.0.2            
+ [55] numDeriv_2016.8-1.1     fastmap_1.2.0           boot_1.3-31            
+ [58] digest_0.6.37           timechange_0.3.0        R6_2.6.1               
+ [61] estimability_1.5.1      textshaping_1.0.1       colorspace_2.1-1       
+ [64] dichromat_2.0-0.1       generics_0.1.4          data.table_1.17.8      
+ [67] recipes_1.3.1           corpcor_1.6.10          class_7.3-23           
+ [70] httr_1.4.7              htmlwidgets_1.6.4       scatterplot3d_0.3-44   
+ [73] ggstats_0.10.0          pkgconfig_2.0.3         gtable_0.3.6           
+ [76] timeDate_4041.110       S7_0.2.0                XVector_0.46.0         
+ [79] htmltools_0.5.8.1       dotCall64_1.2           multcompView_0.1-10    
+ [82] clue_0.3-66             SeuratObject_5.1.0      leaps_3.2              
+ [85] png_0.1-8               gower_1.0.2             reformulas_0.4.1       
+ [88] knitr_1.50              reshape2_1.4.4          rjson_0.2.23           
+ [91] uuid_1.2-1              nlme_3.1-168            nloptr_2.2.1           
+ [94] GlobalOptions_0.1.2     stringr_1.5.1           vipor_0.4.7            
+ [97] pillar_1.11.0           vctrs_0.6.5             xtable_1.8-4           
+[100] cluster_2.1.8.1         beeswarm_0.4.0          evaluate_1.0.4         
+[103] mvtnorm_1.3-3           cli_3.6.5               compiler_4.4.2         
+[106] crayon_1.5.3            future.apply_1.20.0     labeling_0.4.3         
+[109] forcats_1.0.0           ggbeeswarm_0.7.2        ggiraph_0.8.13         
+[112] lmerTest_3.1-3          Biostrings_2.74.1       lazyeval_0.2.2         
+[115] future_1.67.0           rbibutils_2.3           readxl_1.4.5           
