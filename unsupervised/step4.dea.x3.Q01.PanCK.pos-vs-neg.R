@@ -164,6 +164,293 @@ ggsave(p, filename = file.path(de_dir, "contrast1_violins.svg"), width=18, heigh
 ggsave(p, filename = file.path(de_dir, "contrast1_violins.pdf"), width=18, height=12)
 p
 
+## load packages
+library(dplyr)
+library(broom)
+
+##
+# force CancerType in this order
+desired_order <- c("CC", "IM", "LGD", "HGD", "IC")
+contrast_factor <- "CancerType"
+
+violin_df <- cbind(dfs_contrast1[[3]]%>% dplyr::select(eval(contrast_factor)),
+                   dfs_contrast1[[2]])
+violin_df <- violin_df %>% tidyr::pivot_longer(cols=-1, names_to = "Protein", values_to = "Expression")
+#colnames(violin_df)[1] <- "contrast_factor"
+violin_df <- violin_df %>% filter(Protein %in% label_de_contrast1)
+
+head(violin_df)
+
+#
+# Force factor levels to the desired order
+violin_df[[contrast_factor]] <- factor(
+  violin_df[[contrast_factor]],
+  levels = desired_order
+)
+
+# Make sure CancerType is a factor with the baseline you want
+violin_df$CancerType <- factor(violin_df$CancerType,
+                               levels = c("CC", "IM", "LGD", "HGD", "IC"))
+
+# Run linear regression per protein
+lm_coeffs <- violin_df %>%
+  group_by(Protein) %>%
+  do(tidy(lm(Expression ~ CancerType, data = .))) %>%
+  ungroup()
+
+# Inspect
+head(lm_coeffs)
+write.csv(lm_coeffs, "lm_coeffs.csv", row.names = FALSE)
+
+
+# Encode CancerType numerically for trend
+violin_df$CancerType_num <- as.numeric(factor(violin_df$CancerType,
+                                              levels = c("CC", "IM", "LGD", "HGD", "IC")))
+corr_coeffs <- violin_df %>%
+  group_by(Protein) %>%
+  summarise(
+    y_pos = max(Expression, na.rm = TRUE) + 50,  # top of y-axis for this protein
+    cor_coef = cor(Expression, CancerType_num, method = "pearson"),
+    .groups = "drop"
+  )
+
+write.csv(corr_coeffs, "correlation_coeffs.csv", row.names = FALSE)
+
+plot_df <- violin_df %>%
+  left_join(corr_coeffs, by = "Protein")
+
+### make plot
+p2 <- ggplot(plot_df,
+            aes(x=.data[[contrast_factor]], y=Expression, fill=.data[[contrast_factor]])) +
+  geom_violin() +
+  geom_jitter(width=0.25, height=0, size = 0.8, alpha=0.3) +
+  geom_smooth(aes(group = 1), method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  scale_fill_manual(values = pal_main[[contrast_factor]]) +
+  #geom_text(aes(x = 3, y = max(Expression, na.rm = TRUE),
+  geom_text(data = corr_coeffs, aes(x = 3, y = y_pos,
+                label = paste0("r = ", round(cor_coef, 2))),
+                inherit.aes = FALSE, hjust = 0.5) +
+  facet_wrap(~Protein, scales = "free_y", ncol = 4) +
+  labs(x = eval(contrast_factor), y = "Expression (normalized counts)") +
+  scale_y_continuous(trans = "log2", expand = expansion(mult = 0.2)) +
+  theme_bw(base_size = 14) +
+  guides(fill=guide_legend(title = eval(contrast_factor))) +
+  theme(legend.position="bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1) 
+  )
+
+ggsave(p2, filename = file.path(de_dir, "contrast1_violins.byCancerType.svg"), width=18, height=32)
+ggsave(p2, filename = file.path(de_dir, "contrast1_violins.byCancerType.pdf"), width=18, height=32)
+
+p2
+
+## make new plot
+
+## make plot without labels
+##
+p3 <- ggplot(violin_df,
+          aes(x=.data[[contrast_factor]], y=Expression, fill=.data[[contrast_factor]])) +
+  geom_violin() +
+  geom_jitter(width=0.25, height=0, size = 0.8, alpha=0.3) +
+  geom_smooth(aes(group = 1), method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  scale_fill_manual(values = pal_main[[contrast_factor]]) +
+#  facet_wrap(~Protein, scales = "free_y", ncol = 4)
+  facet_wrap(~Protein, scales = "free_y", ncol = 8)
+
+# Build the ggplot object
+gb <- ggplot_build(p3)
+
+# Extract panel y-limits
+ymax_df <- data.frame(
+  Protein = levels(factor(violin_df$Protein)),
+  y_max = sapply(gb$layout$panel_scales_y, function(x) x$range$range[2])
+)
+
+ymin_df <- data.frame(
+  Protein = levels(factor(violin_df$Protein)),
+  y_min = sapply(gb$layout$panel_scales_y, function(x) x$range$range[1])
+)
+
+## Combine with correlation coefficients
+cor_df <- violin_df %>%
+  group_by(Protein) %>%
+  summarise(cor_coef = cor(Expression, as.numeric(factor(CancerType,
+                                                         levels = c("CC","IM","LGD","HGD","IC")))),
+            .groups = "drop")
+
+label_df1 <- left_join(cor_df, ymax_df, by = "Protein")
+label_df2 <- left_join(cor_df, ymin_df, by = "Protein")
+
+## Add text using computed y_max
+p3 <- p3 + geom_text(data = label_df2,
+              aes(x = 1, y = y_min*0.5, label = paste0("r = ", sprintf("%.2f", cor_coef))),
+              inherit.aes = FALSE, hjust = 0.5) +
+  labs(x = eval(contrast_factor), y = "Expression (normalized counts)") +
+  scale_y_continuous(trans = "log2", expand = expansion(mult = 0.2)) +
+  theme_bw(base_size = 14) +
+  guides(fill=guide_legend(title = eval(contrast_factor))) +
+  theme(legend.position="bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+
+#ggsave(p3, filename = file.path(de_dir, "contrast1_violins.byCancerType.v3.svg"), width=18, height=32)
+ggsave(p3, filename = file.path(de_dir, "contrast1_violins.byCancerType.v3.svg"), width=36, height=16)
+#ggsave(p3, filename = file.path(de_dir, "contrast1_violins.byCancerType.v3.pdf"), width=18, height=32)
+ggsave(p3, filename = file.path(de_dir, "contrast1_violins.byCancerType.v3.pdf"), width=36, height=16)
+
+###
+# Numeric encoding for CancerType
+violin_df$CancerType_num <- as.numeric(factor(violin_df$CancerType,
+                                              levels = c("CC","IM","LGD","HGD","IC")))
+
+# Correlation per protein
+cor_df <- violin_df %>%
+  group_by(Protein) %>%
+  summarise(cor_coef = cor(Expression, CancerType_num), .groups = "drop")
+
+# Step 3: Determine number of pages
+library(ggforce)
+n_proteins <- length(unique(violin_df$Protein))
+per_page <- 8   # 4 proteins per page
+n_pages <- ceiling(n_proteins / per_page)
+
+pdf(file.path(de_dir, "contrast1_violins.byCancerType.v4.pdf"), width = 12, height = 6)
+
+# Loop over pages and extract y-max per page
+for (i in 1:n_pages) {
+
+p4 <- ggplot(violin_df, aes(x = CancerType, y = Expression, fill = CancerType)) +
+  geom_violin() +
+  geom_jitter(width=0.25, height=0, size = 0.8, alpha=0.3) +
+  geom_smooth(aes(group = 1), method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  facet_wrap_paginate(~Protein, scales = "free_y", ncol = 4, nrow = 2, page = i)
+
+# Extract y-min per facet in this page
+  gb <- ggplot_build(p4)
+  panel_proteins <- gb$layout$panel_params[[1]]$strip_text  # list of proteins on this page
+  y_min <- sapply(gb$layout$panel_scales_y, function(x) x$range$range[1]) ## x$range$range[2] for ymax
+  
+  # Prepare label dataframe for this page
+  label_df <- data.frame(
+    Protein = unique(violin_df$Protein)[gb$layout$layout$ROW],  # match panel order
+    y_min = y_min
+  ) %>% 
+    left_join(cor_df, by = "Protein")
+  
+# Add correlation text
+p4 <- p4 + geom_text(data = label_df,
+                     aes(x = 1, y = y_min*0.5,
+                         label = paste0("r = ", sprintf("%.2f", cor_coef))),
+                     inherit.aes = FALSE, hjust = 0.5) +
+  labs(x = eval(contrast_factor), y = "Expression (normalized counts)") +
+  scale_y_continuous(trans = "log2", expand = expansion(mult = 0.2)) +
+  theme_bw(base_size = 14) +
+  guides(fill=guide_legend(title = eval(contrast_factor))) +
+  theme(legend.position="bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+
+print(p4)
+}
+
+dev.off()
+
+###
+### make px ggplot obj then split it
+###
+
+px <- ggplot(violin_df,
+          aes(x=.data[[contrast_factor]], y=Expression, fill=.data[[contrast_factor]])) +
+  geom_violin() +
+  geom_jitter(width=0.25, height=0, size = 0.8, alpha=0.3) +
+  geom_smooth(aes(group = 1), method = "lm", se = FALSE, color = "red", linetype = "dashed") +
+  scale_fill_manual(values = pal_main[[contrast_factor]])
+
+# Build the ggplot object
+gb <- ggplot_build(px)
+
+# Extract panel y-limits
+ymax_df <- data.frame(
+  Protein = levels(factor(violin_df$Protein)),
+  y_max = sapply(gb$layout$panel_scales_y, function(x) x$range$range[2])
+)
+
+ymin_df <- data.frame(
+  Protein = levels(factor(violin_df$Protein)),
+  y_min = sapply(gb$layout$panel_scales_y, function(x) x$range$range[1])
+)
+
+## Combine with correlation coefficients
+cor_df <- violin_df %>%
+  group_by(Protein) %>%
+  summarise(cor_coef = cor(Expression, as.numeric(factor(CancerType,
+                                                         levels = c("CC","IM","LGD","HGD","IC")))),
+            .groups = "drop")
+
+label_df1 <- left_join(cor_df, ymax_df, by = "Protein")
+label_df2 <- left_join(cor_df, ymin_df, by = "Protein")
+
+## Add text using computed y_max
+px <- px + geom_text(data = label_df2,
+              aes(x = 1.5, y = y_min*0.5, label = paste0("r = ", sprintf("%.2f", cor_coef))),
+              inherit.aes = FALSE, hjust = 0.5) +
+  labs(x = eval(contrast_factor), y = "Expression (normalized counts)") +
+  scale_y_continuous(trans = "log2", expand = expansion(mult = 0.2), labels = function(x) sprintf("%.1f", x)) +
+  theme_bw(base_size = 14) +
+  guides(fill=guide_legend(title = eval(contrast_factor))) +
+  theme(legend.position="bottom",
+        axis.text.x = element_text(angle = 45, hjust = 1))
+
+ggsave(px, filename = file.path(de_dir, "contrast1_violins.byCancerType.v5.pdf"), width=12, height=6)
+
+##
+n_proteins <- length(unique(violin_df$Protein))
+per_page <- 8  # number of proteins per page
+n_pages <- ceiling(n_proteins / per_page)
+
+pdf(file.path(de_dir, "contrast1_violins.byCancerType.vx.pdf"), width = 12, height = 6)  
+
+for (i in 1:n_pages) {
+  # Add pagination facet
+  p_page <- px + facet_wrap_paginate(~Protein, scales = "free_y",
+                                    ncol = 4, nrow = 2, page = i)
+  # Optionally: add per-facet correlation labels or other annotations here
+  print(p_page)
+}
+
+dev.off()
+
+
+# ####################
+# library(dplyr)
+# library(broom)
+# 
+# # Make sure CancerType is a factor with the baseline you want
+# violin_df$CancerType <- factor(violin_df$CancerType,
+#                                levels = c("CC", "IM", "LGD", "HGD", "IC"))
+# 
+# # Run linear regression per protein
+# lm_coeffs <- violin_df %>%
+#   group_by(Protein) %>%
+#   do(tidy(lm(Expression ~ CancerType, data = .))) %>%
+#   ungroup()
+# 
+# # Inspect
+# head(lm_coeffs)
+# write.csv(lm_coeffs, "lm_coeffs.csv", row.names = FALSE)
+# 
+# 
+# # Encode CancerType numerically for trend
+# violin_df$CancerType_num <- as.numeric(factor(violin_df$CancerType,
+#                                               levels = c("CC", "IM", "LGD", "HGD", "IC")))
+# 
+# corr_coeffs <- violin_df %>%
+#   group_by(Protein) %>%
+#   summarise(
+#     cor_coef = cor(Expression, CancerType_num, method = "pearson"),
+#     .groups = "drop"
+#   )
+# 
+# write.csv(corr_coeffs, "correlation_coeffs.csv", row.names = FALSE)
+
 #```
 #
 #
